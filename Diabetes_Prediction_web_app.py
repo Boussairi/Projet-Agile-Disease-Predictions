@@ -7,7 +7,7 @@ import streamlit as st
 
 
 # loading the saved model
-loaded_model = pickle.load(open("C:/Users/Xps/Desktop/S4/Autoformation/Disease prediction/diabetes_model.sav", 'rb'))
+loaded_model = pickle.load(open("diabetes_model.sav", 'rb'))
 
 
 # creating a function for Prediction
