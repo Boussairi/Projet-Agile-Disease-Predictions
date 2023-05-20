@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - Sprint-1
+      - Sprint-2
+      
 
 jobs:
   build:
