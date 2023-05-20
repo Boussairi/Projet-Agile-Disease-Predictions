@@ -360,7 +360,50 @@ if (selected == "Parkinsons Prediction"):
         parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]])                          
         
         if (parkinsons_prediction[0] == 1):
-          parkinsons_diagnosis = "The person has Parkinson's disease"
+            parkinsons_diagnosis = "The person has Parkinson's disease"
+            if fo < 100:
+                st.write("- Augmentez l'intensité de votre voix lors de la parole.")
+            if fhi > 300:
+                st.write("- Essayez de parler plus doucement pour éviter les tensions vocales.")
+                
+            if PPQ > 20:
+                st.write("- Pratiquez des exercices de respiration pour améliorer le contrôle de votre voix.")
+                
+            if APQ5 > 10:
+                st.write("- Travaillez avec un orthophoniste pour améliorer la stabilité de votre voix.")
+                
+            if RPDE > 10:
+                st.write("- Pratiquez des exercices de modulation de la voix pour améliorer sa clarté.")
+                
+            if PPE > 48:
+                st.write("- Travaillez sur des exercices d'articulation pour améliorer la précision de votre parole.")
+                
+            if flo < 80:
+                st.write("- Consultez un professionnel de la voix pour évaluer votre santé vocale.")
+                
+            if DDP > 34:
+                st.write("- Pratiquez des exercices de relaxation pour réduire les tensions vocales.")
+                
+            if APQ3 > 25:
+                st.write("- Travaillez sur des exercices de vocalisation pour améliorer la qualité de votre voix.")
+                
+            if DFA > 58:
+                st.write("- Consultez un spécialiste de la voix pour obtenir des exercices personnalisés.")
+                
+            if Jitter_percent > 23:
+                st.write("- Essayez des exercices d'échauffement vocal pour améliorer la stabilité de votre voix.")
+                
+            if Shimmer > 12:
+                st.write("- Travaillez avec un orthophoniste pour réduire l'irrégularité de votre voix.")
+                
+            if Shimmer_dB > 15:
+                st.write("- Pratiquez des exercices de respiration pour améliorer le contrôle de votre voix.")
+                
+            if spread1 > 6:
+                st.write("- Travaillez sur des exercices de modulation de la voix pour éviter les tensions vocales.")
+                
+            if Jitter_Abs > 63:
+                st.write("- Consultez un professionnel de la voix pour évaluer votre santé vocale.")
         else:
           parkinsons_diagnosis = "The person does not have Parkinson's disease"
         
