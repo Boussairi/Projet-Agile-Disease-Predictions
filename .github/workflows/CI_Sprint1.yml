@@ -26,6 +26,9 @@ jobs:
           pip install streamlit-option-menu==0.3.2
           pip install scikit-learn==1.0.1
           pip install pytest
+          pip show protobuf
+          pip install --upgrade protobuf
+          pip install --upgrade streamlit
 
 
       - name: Build and deploy
