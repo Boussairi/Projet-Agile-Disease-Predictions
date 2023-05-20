@@ -165,10 +165,77 @@ if (selected == 'Heart Disease Prediction'):
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])                          
         
         if (heart_prediction[0] == 1):
-          heart_diagnosis = 'The person is having heart disease'
+            heart_diagnosis = 'The person is having heart disease'
+            if age > 60:
+                print("You should consider regular check-ups and follow a heart-healthy lifestyle.")
+            
+            # Resting Blood Pressure
+            if trestbps > 140:
+                print("It is recommended to monitor your blood pressure regularly and consult a doctor.")
+            
+            # Resting Electrocardiographic results
+            if restecg == 1:
+                print("You may need further cardiac tests to evaluate your heart's electrical activity.")
+            
+            # ST depression induced by exercise
+            if oldpeak > 2:
+                print("You should consult a doctor for further evaluation of possible heart disease.")
+            
+            # thal
+            if thal == 0:
+                print("Your thalassemia test result is normal.")
+            elif thal == 1:
+                print("Your thalassemia test indicates a fixed defect. Consult a doctor for further evaluation.")
+            elif thal == 2:
+                print("Your thalassemia test indicates a reversible defect. Consult a doctor for further evaluation.")
+            
+            # Sex
+            if sex == 0:
+                print("Being female reduces the risk of heart disease. However, it is still important to maintain a healthy lifestyle.")
+            
+            # Serum Cholestoral in mg/dl
+            if chol > 240:
+                print("Your cholesterol level is high. Adopt a heart-healthy diet and lifestyle changes.")
+            
+            # Maximum Heart Rate achieved
+            if thalach < 100 or thalach > 180:
+                print("Your maximum heart rate achieved is outside the normal range. Consult a doctor for further evaluation.")
+            
+            # Slope of the peak exercise ST segment
+            if slope == 2:
+                print("The slope of your peak exercise ST segment indicates a high risk of heart disease. Consult a doctor.")
+            
+            # Chest Pain types
+            if cp == 1:
+                print("Your chest pain type suggests typical angina. Consult a doctor for further evaluation.")
+            elif cp == 2:
+                print("Your chest pain type suggests atypical angina. Consult a doctor for further evaluation.")
+            elif cp == 3:
+                print("Your chest pain type suggests non-anginal pain. Monitor your symptoms and consult a doctor if necessary.")
+            
+            # Fasting Blood Sugar > 120 mg/dl
+            if fbs == 1:
+                print("Your fasting blood sugar level is above normal. Monitor your blood sugar and adopt a healthy lifestyle.")
+            
+            # Exercise Induced Angina
+            if exang == 1:
+                print("You have exercise-induced angina. Consult a doctor for further evaluation and appropriate treatment.")
+            
+        # Major vessels colored by flourosopy
+            if ca == 0:
+                print("The number of major vessels colored by flourosopy indicates no significant heart disease.")
+            elif ca > 0:
+                print("The number of major vessels colored by flourosopy indicates the presence of heart disease. Consult a doctor.")
+
+            if int(chol) < 30:
+                st.write('Your Cholestoral level is low. You should consult with a doctor to determine if you are at risk for developing Parkinson\'s disease.')
+            else:
+                st.write('Based on your inputs, you appear to be at a lower risk for developing Parkinson\'s disease. However, it is always a good idea to maintain a healthy lifestyle to reduce your risk.')    
+
         else:
           heart_diagnosis = 'The person does not have any heart disease'
-        
+          st.write('- Based on your inputs, you appear to be at a lower risk for developing heart disease. However, it is still important to maintain a healthy lifestyle to reduce your risk of developing heart disease.')
+
     st.success(heart_diagnosis)
         
     
