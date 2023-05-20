@@ -35,6 +35,6 @@ jobs:
         run: |
           
           # déployer votre application Streamlit
-          streamlit run Diabetes_Prediction_web_app.py
+          echo "25 1 2 120 80 30 1 0" | streamlit run Diabetes_Prediction_web_app.py
 
       # Ajoutez d'autres étapes CI si nécessaire
