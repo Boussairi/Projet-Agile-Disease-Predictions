@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -32,8 +29,10 @@ jobs:
           pip show protobuf
           pip install --upgrade protobuf
           pip install --upgrade streamlit
-
-
+          
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+      
       - name: Build and deploy
         run: |
           
