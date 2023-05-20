@@ -25,6 +25,7 @@ jobs:
           pip install streamlit==1.2.0
           pip install streamlit-option-menu==0.3.2
           pip install scikit-learn==1.0.1
+          pip install pytest
 
       - name: Run tests
         run: |
