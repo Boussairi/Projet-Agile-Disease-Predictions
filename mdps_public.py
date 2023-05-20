@@ -73,6 +73,13 @@ if (selected == 'Diabetes Prediction'):
     # creating a button for Prediction
     
     if st.button('Diabetes Test Result'):
+        Pregnancies=float(Pregnancies)
+        Glucose=float(Glucose)
+        BloodPressure=float(BloodPressure)
+        SkinThickness=float(SkinThickness)
+        Insulin=float(Insulin)
+        BMI=float(BMI)
+        Age=float(Age)
         diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0] == 1):
@@ -162,6 +169,19 @@ if (selected == 'Heart Disease Prediction'):
     # creating a button for Prediction
     
     if st.button('Heart Disease Test Result'):
+        age=float(age)
+        sex=float(sex)
+        cp=float(cp)
+        trestbps=float(trestbps)
+        chol=float(chol)
+        fbs=float(fbs)
+        restecg=float(restecg)
+        thalach=float(thalach)
+        exang=float(exang)
+        oldpeak=float(oldpeak)
+        slope=float(slope)
+        ca=float(ca)
+        thal=float(thal)
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])                          
         
         if (heart_prediction[0] == 1):
@@ -322,6 +342,21 @@ if (selected == "Parkinsons Prediction"):
     
     # creating a button for Prediction    
     if st.button("Parkinson's Test Result"):
+        fo = float(fo)
+        fhi = float(fhi)
+        PPQ = float(PPQ)
+        APQ5 = float(APQ5)
+        RPDE = float(RPDE)
+        PPE = float(PPE)
+        flo = float(flo)
+        DDP = float(DDP)
+        APQ3 = float(APQ3)
+        DFA = float(DFA)
+        Jitter_percent = float(Jitter_percent)
+        Shimmer = float(Shimmer)
+        Shimmer_dB = float(Shimmer_dB)
+        spread1 = float(spread1)
+        Jitter_Abs = float(Jitter_Abs)
         parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]])                          
         
         if (parkinsons_prediction[0] == 1):
