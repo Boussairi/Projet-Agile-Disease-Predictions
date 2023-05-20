@@ -1,0 +1,39 @@
+name: CI_Sprint1
+
+on:
+  push:
+    branches:
+      - Sprint-1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install numpy==1.21.4
+          pip install pickle-mixin==1.0.2
+          pip install streamlit==1.2.0
+          pip install streamlit-option-menu==0.3.2
+          pip install scikit-learn==1.0.1
+
+      - name: Run tests
+        run: |
+          python -m pytest tests/
+
+      - name: Build and deploy
+        run: |
+          streamlit build Diabets_Prediction_Web_app.py
+          # déployer votre application Streamlit
+          streamlit run Diabets_Prediction_Web_app.py
+
+      # Ajoutez d'autres étapes CI si nécessaire
