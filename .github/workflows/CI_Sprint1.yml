@@ -30,7 +30,7 @@ jobs:
 
       - name: Build and deploy
         run: |
-          streamlit build Diabets_Prediction_Web_app.py
+          
           # déployer votre application Streamlit
           streamlit run Diabets_Prediction_Web_app.py
 
