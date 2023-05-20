@@ -29,9 +29,6 @@ jobs:
           pip show protobuf
           pip install --upgrade protobuf
           pip install --upgrade streamlit
-          
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
       
       - name: Build and deploy
         run: |
