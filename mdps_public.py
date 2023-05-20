@@ -76,9 +76,30 @@ if (selected == 'Diabetes Prediction'):
         diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0] == 1):
-          diab_diagnosis = 'The person is diabetic'
+            diab_diagnosis = 'The person is diabetic'
+          # Determine risk of diabetes based on inputs
+            if (int(Glucose )> 140):
+                st.write('- Your glucose level is high. You should consult with a doctor to determine if you are at risk for developing diabetes. In the meantime, try to limit your intake of sugary foods and drinks, and increase your physical activity.')
+            if (int(BMI) > 30):
+                st.write('- Your BMI is high. You should consult with a doctor to determine if you are at risk for developing diabetes. In the meantime, try to incorporate more fruits and vegetables into your diet, and increase your physical activity.')
+            # Recommandation basée sur l'âge
+            if (int(Age) > 45):
+                st.write('- Your age puts you at a higher risk for developing diabetes. You should consult with a doctor to determine if you are at risk. In the meantime, try to limit your intake of sugary foods and drinks, and increase your physical activity.')
+            if (int(Pregnancies) > 5):
+                st.write('- Your history of pregnancies puts you at a higher risk for developing diabetes. You should consult with a doctor to determine if you are at risk. In the meantime, try to incorporate more fruits and vegetables into your diet, and increase your physical activity.')
+             
+            # Recommandation basée sur la pression artérielle
+            if int(BloodPressure) > 130:
+                st.write("- Votre pression artérielle est élevée. Il est recommandé de surveiller régulièrement votre tension artérielle et de consulter un médecin pour évaluer votre risque de développer des problèmes cardiovasculaires.")
+
+            # Recommandation basée sur le taux d'insuline
+            if int(Insulin) < 10:
+                st.write("- Votre taux d'insuline est inférieur à la normale. Cela peut indiquer une résistance à l'insuline ou d'autres problèmes métaboliques. Il est recommandé de consulter un médecin pour un diagnostic précis et un plan de traitement approprié.")                     
+  
         else:
           diab_diagnosis = 'The person is not diabetic'
+          st.write('- Based on your inputs, you appear to be at a lower risk for developing diabetes. However, it is always a good idea to maintain a healthy lifestyle to reduce your risk. Try to incorporate more fruits and vegetables into your diet, limit your intake of sugary foods and drinks, and increase your physical activity. It is also recommended that you schedule regular check-ups with your doctor to monitor your health.')
+        
         
     st.success(diab_diagnosis)
 
