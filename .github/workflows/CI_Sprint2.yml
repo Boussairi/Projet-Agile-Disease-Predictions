@@ -1,0 +1,37 @@
+name: CI_Sprint2
+
+on:
+  push:
+    branches:
+      - Sprint-2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install numpy==1.21.4
+          pip install pickle-mixin==1.0.2
+          pip install streamlit==1.2.0
+          pip install streamlit-option-menu==0.3.2
+          pip install scikit-learn==1.0.1
+          pip install pytest
+          pip show protobuf
+          pip install --upgrade protobuf
+          pip install --upgrade streamlit
+      
+      - name: Build and deploy
+        run: |
+          
+          # déployer votre application Streamlit
+          streamlit run mdps_public.py &
