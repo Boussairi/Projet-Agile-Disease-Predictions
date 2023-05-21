@@ -30,7 +30,7 @@ jobs:
           pip install --upgrade protobuf
           pip install --upgrade streamlit
           pip install selenium
-          pip install webdriver
+          pip install chromedriver-autoinstaller
         
       - name: Build and deploy
         run: |
