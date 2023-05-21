@@ -81,7 +81,7 @@ class TestMyScript(unittest.TestCase):
         # Vérifiez si le résultat est correct
         self.assertEqual(result, 'The person has Parkinson\'s disease')
 if name == 'main':
-unittest.main()
+    unittest.main()
 #class TestDiseasePrediction(unittest.TestCase):  
 # Diabetes Prediction Page
 #if (selected == 'Diabetes Prediction'):
