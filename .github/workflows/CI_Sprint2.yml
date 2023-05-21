@@ -30,6 +30,9 @@ jobs:
           pip install --upgrade protobuf
           pip install --upgrade streamlit
       
+      - name: Run integration tests
+        run: pytest integration_tests.py
+        
       - name: Build and deploy
         run: |
           
