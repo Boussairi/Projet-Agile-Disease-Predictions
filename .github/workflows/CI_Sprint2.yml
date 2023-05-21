@@ -29,12 +29,12 @@ jobs:
           pip show protobuf
           pip install --upgrade protobuf
           pip install --upgrade streamlit
-      
-      - name: Run unit tests
-        run: pytest sprint2_unittest.py
+          pip install selenium
         
       - name: Build and deploy
         run: |
           
           # déployer votre application Streamlit
           streamlit run mdps_public.py &
+      - name: Run functional tests
+        run: python Sprint2_test_fonc.py
