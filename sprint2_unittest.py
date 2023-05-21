@@ -7,9 +7,7 @@ from mdps_public import *
 class TestDiseasePrediction(unittest.TestCase):
 
 with st.sidebar:
-    
-    selected = option_menu('Multiple Disease Prediction System',
-                          
+    selected = option_menu('Multiple Disease Prediction System',                        
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
                            'Parkinsons Prediction'],
