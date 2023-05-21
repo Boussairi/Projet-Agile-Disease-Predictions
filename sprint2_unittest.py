@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from your_script_file import *
+from mdps_public import *
 
 class TestDiseasePrediction(unittest.TestCase):
 
