@@ -97,7 +97,7 @@ if (selected == 'Diabetes Prediction'):
              
             # Recommandation basée sur la pression artérielle
             if int(BloodPressure) > 130:
-                st.write("- Votre pression artérielle est élevée. Il est recommandé de surveiller régulièrement votre tension artérielle et de consulter un médecin pour évaluer votre risque de développer des problèmes cardiovasculaires.")
+                st.write("- Votre pression artérielle est élevée . Il est recommandé de surveiller régulièrement votre tension artérielle et de consulter un médecin pour évaluer votre risque de développer des problèmes cardiovasculaires.")
 
             # Recommandation basée sur le taux d'insuline
             if int(Insulin) < 10:
