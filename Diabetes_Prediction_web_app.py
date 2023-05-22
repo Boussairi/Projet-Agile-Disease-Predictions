@@ -35,7 +35,7 @@ def main():
     
     
     # giving a title
-    st.title('Diabetes Prediction Web App')
+    st.title('Diabetes Prediction Web Application')
     
     
     # getting the input data from the user
